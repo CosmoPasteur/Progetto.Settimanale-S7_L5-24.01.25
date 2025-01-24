@@ -1,3 +1,8 @@
+const form = document.getElementById("shop-form"); // nodo del form
+const productList = document.getElementById("product-list");
+const submitButton = document.getElementById("submit-btn");
+const deleteButton = document.getElementById("delete-btn");
+
 fetch("https://striveschool-api.herokuapp.com/api/product/", {
   method: "GET",
   headers: {
@@ -19,7 +24,30 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
     console.error("Error:", error);
   });
 
-// const form = document.getElementById("shop-form"); // nodo del form
+//funzione per caricare prodotti
+function loadProducts() {
+  makeRequest("GET", "https://striveschool-api.herokuapp.com/api/product/")
+    .then((products) => {
+      const productList = document.getElementById("product-list");
+      productList.innerHTML = "";
+      products.forEach((product) => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("card", "mb-3");
+        productCard.innerHTML = `
+          <div class="card-body">
+            <img src="${product.imageUrl}" alt="${product.name}" class="img-fluid" />
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text">${product.description}</p>
+            <p class="card-text"><strong>Prezzo:</strong> €${product.price}</p>
+            <button class="btn btn-warning" onclick="editProduct(${product._id})">Modifica</button>
+            <button class="btn btn-danger" onclick="deleteProduct(${product._id})">Elimina</button>
+          </div>
+        `;
+        productList.appendChild(productCard);
+      });
+    })
+    .catch((error) => console.error("Error loading products:", error));
+}
 
 //Agg una eventListner al submit del form
 // form.addEventListener("submit", function (event) {
@@ -39,7 +67,6 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
 //   }
 // });
 
-// function loadProducts() {
 //   fetch("https://striveschool-api.herokuapp.com/api/product/", {
 //     method: "GET",
 //     headers: {
