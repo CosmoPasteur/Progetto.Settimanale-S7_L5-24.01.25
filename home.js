@@ -18,3 +18,39 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
   .catch((error) => {
     console.error("Error:", error);
   });
+
+prodotti.forEach((prodotto) => {
+  const col = document.createElement("div");
+  col.classList.add("col");
+
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const img = document.createElement("img");
+  img.classList.add("card-img-top");
+  img.alt = prodotto.title;
+  img.src = prodotto.img;
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body");
+
+  const h5 = document.createElement("h5");
+  h5.classList.add("card-title");
+  h5.innerText = prodotto.title;
+  const p = document.createElement("p");
+  p.classList.add("card-text");
+  p.innerText = prodotto.title;
+
+  col.innerHTML = `
+    <div class="card">
+              <img src="..." class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>    
+    `;
+});
