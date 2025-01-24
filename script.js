@@ -24,4 +24,17 @@ const form = document.getElementById("shop-form"); // nodo del form
 //Agg una eventListner al submit del form
 form.addEventListener("submit", function (event) {
   event.preventDefault(); //evito la ricarica della pagina
+
+  const newProduct = {
+    name: document.getElementById("name").value,
+    description: document.getElementById("description").value,
+    brand: document.getElementById("brand").value,
+    imageUrl: document.getElementById("imageUrl").value,
+    price: parseFloat(document.getElementById("price").value),
+  };
+
+  if (Object.values(newProduct).some((field) => field === "")) {
+    alert("Tutti i campi sono obbligatori!");
+    return;
+  }
 });
