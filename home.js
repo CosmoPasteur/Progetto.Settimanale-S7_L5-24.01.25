@@ -19,7 +19,9 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
     console.error("Error:", error);
   });
 
-prodotti.forEach((prodotto) => {
+const row = document.getElementById("productList");
+
+productList.forEach((prodotto) => {
   const col = document.createElement("div");
   col.classList.add("col");
 
@@ -52,16 +54,56 @@ prodotti.forEach((prodotto) => {
     event.target.closest("col").editProduct();
   };
 
-  col.innerHTML = `
-    <div class="card">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>    
-    `;
+  const addToCartBtn = document.createElement("button");
+  addToCartBtn.classList.add("btn", "btn-success");
+  addToCartBtn.innerText = "Aggiungi al carrello";
+
+  addToCartBtn.onclick = function (event) {
+    // event.target;
+    console.log(prodotto);
+
+    // gestisco il dato (oggetto libro) nell'array
+    cart.push(prodotto);
+    // uso l'array per creare o modificare la voce esistente "cart" nel localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // a questo punto gestiamo la visualizzazione dell'elemento nella UI per dare un feedback visivo all'utente
+    addBookToCart(prodotto);
+  };
+
+  //   col.innerHTML = `
+  //     <div class="card">
+  //               <img src="..." class="card-img-top" alt="..." />
+  //               <div class="card-body">
+  //                 <h5 class="card-title">Card title</h5>
+  //                 <p class="card-text">
+  //                   Some quick example text to build on the card title and make up the bulk of the card's content.
+  //                 </p>
+  //                 <a href="#" class="btn btn-primary">Go somewhere</a>
+  //               </div>
+  //             </div>
+  //     `;
+
+  //   const cardBody = col.querySelector(".card-body");
+
+  cardBody.appendChild(h5);
+  cardBody.appendChild(p);
+  cardBody.appendChild(button);
+  cardBody.appendChild(addToCartBtn);
+  card.appendChild(img);
+  card.appendChild(cardBody);
+  col.appendChild(card);
+  row.appendChild(col);
 });
+
+function addBookToCart(prodotti) {
+  const ul = document.querySelector("#cart-container ul");
+  const li = document.createElement("li");
+  li.classList.add("list-group-item", "px-0", "d-flex", "align-items-center");
+}
+
+const prodottoImg = document.createElement("img");
+prodottoImg.classList.add("me-3");
+prodottoImg.src = prodotto.img;
+prodottoImg.alt = prodotto.title;
+prodottoImg.style.width = "50px";

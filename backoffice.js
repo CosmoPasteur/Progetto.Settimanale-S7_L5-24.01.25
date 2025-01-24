@@ -21,7 +21,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
     console.log(prodotti);
   })
   .catch((error) => {
-    console.error("Error:", error);
+    console.log("Error:", error);
   });
 
 //funzione per caricare prodotti
@@ -67,6 +67,7 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+// **********************************************
 //   fetch("https://striveschool-api.herokuapp.com/api/product/", {
 //     method: "GET",
 //     headers: {

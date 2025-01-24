@@ -1,0 +1,67 @@
+// Apro questo foglio json perchè il server non funziona, da errore 503 Server unavailable.
+[
+  {
+    "name": "Audi Led",
+    "description": "The best Led",
+    "brand": "Audi S7",
+    "imageUrl": "https://unsplash.com/it/foto/auto-honda-rossa-e-nera-heFTscwGDCA",
+    "price": "100",
+    "userId": "12340"
+  },
+  {
+    "name": "Cerchioni SS",
+    "description": "New best model fullgood",
+    "brand": "SS",
+    "imageUrl": "https://images.unsplash.com/photo-1611633235555-45e252fe48c8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "price": "150",
+    "userId": "12341"
+  },
+  {
+    "name": "Motore Jaguar",
+    "description": "Jaguar Motor 3000cc",
+    "brand": "Jaguar",
+    "imageUrl": "https://images.unsplash.com/photo-1552656967-7a0991a13906?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "price": "2500",
+    "userId": "12342"
+  },
+  {
+    "name": "Gomme",
+    "description": "Gomme auto",
+    "brand": "Cane",
+    "imageUrl": "https://images.unsplash.com/photo-1599388051349-0280d9f5bb22?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "price": "1500",
+    "userId": "12343"
+  },
+  {
+    "name": "Maniglia",
+    "description": "Maniglia auto",
+    "brand": "dodge",
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1693828617281-b5ee1edc20ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "price": "100",
+    "userId": "12344"
+  },
+  {
+    "name": "Volante",
+    "description": "Volante Sportivo Deluxe",
+    "brand": "Alfa Romeo",
+    "imageUrl": "https://images.unsplash.com/photo-1598859159221-1fffc50b4932?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "price": "300",
+    "userId": "12345"
+  },
+  {
+    "name": "Led Ice",
+    "description": "Interni personalizzati",
+    "brand": "Alfa Romeo",
+    "imageUrl": "https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?q=80&w=1998&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "price": "100",
+    "userId": "12346"
+  },
+  {
+    "name": "Led Red",
+    "description": "Interni personalizzati",
+    "brand": "Alfa Romeo",
+    "imageUrl": "https://images.unsplash.com/photo-1498887960847-2a5e46312788?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "price": "100",
+    "userId": "12347"
+  }
+]
