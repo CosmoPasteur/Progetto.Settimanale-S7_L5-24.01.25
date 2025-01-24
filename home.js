@@ -35,11 +35,22 @@ prodotti.forEach((prodotto) => {
   cardBody.classList.add("card-body");
 
   const h5 = document.createElement("h5");
-  h5.classList.add("card-title");
-  h5.innerText = prodotto.title;
+  h5.classList.add("card-text");
+  h5.innerText = prodotto.price;
+
   const p = document.createElement("p");
   p.classList.add("card-text");
   p.innerText = prodotto.title;
+
+  const button = document.createElement("button");
+  button.classList.add("btn", "btn-warning");
+  button.innerText = "Modifica";
+
+  button.onclick = function (event) {
+    console.log(event.target);
+
+    event.target.closest("col").editProduct();
+  };
 
   col.innerHTML = `
     <div class="card">
