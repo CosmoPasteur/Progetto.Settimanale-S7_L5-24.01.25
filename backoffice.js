@@ -60,12 +60,12 @@ form.addEventListener("submit", function (event) {
     imageUrl: document.getElementById("imageUrl").value,
     price: parseFloat(document.getElementById("price").value),
   };
+
+  if (Object.values(newProduct).some((field) => field === "")) {
+    alert("Tutti i campi sono obbligatori!");
+    return;
+  }
 });
-//   if (Object.values(newProduct).some((field) => field === "")) {
-//     alert("Tutti i campi sono obbligatori!");
-//     return;
-//   }
-// });
 
 //   fetch("https://striveschool-api.herokuapp.com/api/product/", {
 //     method: "GET",
