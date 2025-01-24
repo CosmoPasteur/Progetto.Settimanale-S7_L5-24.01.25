@@ -20,3 +20,8 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
   });
 
 const form = document.getElementById("shop-form"); // nodo del form
+
+//Agg una eventListner al submit del form
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); //evito la ricarica della pagina
+});
