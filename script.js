@@ -18,3 +18,5 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
   .catch((error) => {
     console.error("Error:", error);
   });
+
+const form = document.getElementById("shop-form"); // nodo del form
